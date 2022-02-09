@@ -1,0 +1,16 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "elytrian_modified:air_breaks_timer",
+        "change": 1
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "elytrian_modified:air_breaks_timer",
+        "comparison": "<",
+        "compare_to": 5
+    },
+    "hidden": true
+}

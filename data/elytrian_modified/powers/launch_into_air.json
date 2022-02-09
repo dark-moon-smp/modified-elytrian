@@ -1,0 +1,85 @@
+{
+    "type": "origins:multiple",
+    "launch": {
+        "type": "origins:active_self",
+        "cooldown": 800,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 4
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:on_block",
+                        "inverted": true
+                    },
+                    "if_action": {
+                        "type": "origins:add_velocity",
+                        "x": 0,
+                        "y": 0,
+                        "z": 1,
+                        "space": "local"
+                    }
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.parrot.fly",
+                    "volume": 2,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.blaze.shoot",
+                    "volume": 0.2,
+                    "pitch": 2
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 5,
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:entity.parrot.fly",
+                        "volume": 2,
+                        "pitch": 0.7
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:poof ~ ~ ~ 0.6 0.02 0.6 0.1 10"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "ground": {
+        "type": "origins:launch",
+        "cooldown": 800,
+        "hud_render": {
+            "should_render": false
+        },
+        "speed": 2.1,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:on_block"
+        }
+    },
+    "name": "Gift of the Winds",
+    "description": "Every 40 seconds, you are able to launch 20 blocks up into the air.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Active ability, use with %s."
+        },
+        {
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "If used while airborne, you are instead propelled forwards."
+        }
+    ]
+}

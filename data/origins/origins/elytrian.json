@@ -1,0 +1,17 @@
+{
+    "loading_priority": 10,
+    "powers": [
+        "origins:elytra",
+        "elytrian_modified:launch_into_air",
+        "elytrian_modified:air_breaks",
+        "origins:aerial_combatant",
+        "origins:light_armor",
+        "origins:claustrophobia",
+        "origins:more_kinetic_damage"
+    ],
+    "icon": {
+        "item": "minecraft:elytra"
+    },
+    "order": 3,
+    "impact": 1
+}

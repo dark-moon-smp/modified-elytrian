@@ -1,0 +1,76 @@
+{
+    "type": "origins:multiple",
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "power revoke @s elytrian_modified:air_breaks2"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:motion 1 @s"
+                }
+            ]
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @s elytrian_modified:air_breaks2"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:motion 0 @s"
+                }
+            ]
+        },
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 23,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "elytrian_modified:air_breaks_timer",
+                "comparison": "<",
+                "compare_to": 5
+            }
+        }
+    },
+    "active": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "elytrian_modified:air_breaks_timer",
+            "change": 0,
+            "operation": "set"
+        },
+        "key": {
+            "key": "key.sneak",
+            "continuous": false
+        },
+        "cooldown": 200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 4
+        },
+        "condition": {
+            "type": "origins:fall_flying"
+        }
+    },
+    "name": "Air Breaks",
+    "description": "You are able to slow down your flight speed.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Active ability, use by holding %s."
+        }
+    ]
+}
