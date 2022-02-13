@@ -65,6 +65,28 @@
             "type": "origins:fall_flying"
         }
     },
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:change_resource",
+            "resource": "elytrian_modified:air_breaks_timer",
+            "change": 5,
+            "operation": "set"
+        },
+        "entity_action_added": {
+            "type": "origins:change_resource",
+            "resource": "elytrian_modified:air_breaks_timer",
+            "change": 5,
+            "operation": "set"
+        },
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "elytrian_modified:air_breaks_timer",
+            "change": 5,
+            "operation": "set"
+        },
+        "execute_chosen_when_orb": true
+    },
     "name": "Air Breaks",
     "description": "You are able to slow down your flight speed.",
     "badges": [
